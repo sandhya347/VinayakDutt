@@ -55,9 +55,10 @@
       display: grid; grid-template-columns: 220px 1fr; gap: 30px; align-items: center;
     }
     .hero-avatar {
-      width: 220px; height: 220px; object-fit: cover; object-position: center top;
+      width: 220px; height: 220px; object-fit: cover; object-position: center 40%;
       border-radius: 50%; border: 4px solid var(--gold);
       box-shadow: var(--shadow);
+      transform: scale(1.25);
     }
     .hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
     .hero .subtitle { color: var(--gold-soft); margin-bottom: 10px; }
@@ -88,24 +89,27 @@
     .stat-number { font-size: clamp(2rem, 3.2vw, 2.65rem); font-weight: 800; color: var(--gold); margin-bottom: 6px; }
     .stat-label { color: var(--text-body); font-size: .95rem; }
 
-    .companies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .company-card { padding: 24px; }
+    .companies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; align-items: stretch; }
+    .companies-grid > a { display: flex; }
+    .company-card { padding: 24px; display: flex; flex-direction: column; }
+    .company-card p:last-of-type { flex: 1; }
     .company-logo-box {
       height: 170px; border-radius: 10px; background: #fff; margin-bottom: 16px;
       display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
     .company-logo-box img { width: 100%; height: 100%; object-fit: contain; padding: 10px 14px; }
-    .company-logo-box.logo-pacwin img { max-width: 130px; max-height: 130px; padding: 0; }
-    .company-logo-box.logo-pollmatrix img { max-width: 210px; max-height: 110px; }
+    .company-logo-box.logo-pacwin img { max-width: 330px; max-height: 330px; padding: 0; }
+    .company-logo-box.logo-pollmatrix img { max-width: 330px; max-height: 330px; }
     .company-card h3 { font-size: 2rem; margin-bottom: 2px; color: var(--gold); }
     .company-year { color: var(--text-muted); font-size: .95rem; margin-bottom: 12px; }
     .company-card p { color: var(--text-body); font-size: .92rem; }
 
-    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .work-card { overflow: hidden; }
-    .work-cover { height: 330px; }
-    .work-cover img { width: 100%; height: 100%; object-fit: cover; }
-    .work-body { padding: 18px 20px; }
+    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; align-items: stretch; }
+    .works-grid > a { display: flex; }
+    .work-card { overflow: hidden; display: flex; flex-direction: column; }
+    .work-cover { height: 450px; flex-shrink: 0; }
+    .work-cover img { width: 100%; height: 100%; object-fit: cover; }    .work-card:nth-child(2) .work-cover img { object-fit: contain; object-position: center top; background: #fff; }    .work-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
+    .work-body p:last-of-type { flex: 1; }
     .work-body h3 { margin-bottom: 3px; color: var(--gold); font-size: 1.18rem; line-height: 1.25; }
     .work-year { color: var(--text-muted); font-size: .92rem; margin-bottom: 10px; }
     .badge {
@@ -214,10 +218,10 @@
 
   <section class="hero" id="home">
     <div class="hero-inner">
-      <img class="hero-avatar" src="./assets/punjabatcrossroads.png" alt="Vinayak Dutt" />
+      <img class="hero-avatar" src="./assets/coverimage.jpeg" alt="Vinayak Dutt" />
       <div>
         <h1>Vinayak Dutt</h1>
-        <p class="subtitle">Author | TEDx Speaker | Political Strategist | Public Speaker | Sociologist</p>
+        <p class="subtitle">Author | Political Strategist | TEDx PIET, Speaker  | "Visionary of North"-  News18  | Public Speaker | Sociologist</p>
         <p class="tagline">Founder. Visionary. Building impactful narratives with PACWIN and Pollmatrix.</p>
       </div>
     </div>
@@ -227,7 +231,7 @@
     <div class="container">
       <div class="card intro" style="padding: 28px;">
         <p>With over 15 years of experience as an author and political strategist, Vinayak Dutt has dedicated his career to understanding the pulse of India's political landscape.</p>
-        <p>He has worked extensively across 18+ Indian states, delivering deep on-ground insights into diverse political and social dynamics.</p>
+        <p>He has worked extensively across 18+ Indian states, including Punjab, Haryana, Himachal Pradesh, Rajasthan, Maharashtra, Goa, Karnataka, Tamil Nadu, Andhra Pradesh, Chhattisgarh, Uttar Pradesh, Bihar, Delhi, Assam, and Meghalaya—bringing deep on-ground insights into diverse political and social dynamics.</p>
         <p>He has authored two books, with his first title becoming an Amazon Best Seller and receiving recognition from the Honorable Governor of Punjab.</p>
       </div>
     </div>
@@ -256,10 +260,8 @@
     <div class="container">
       <h2 class="section-title">About Vinayak Dutt</h2>
       <div class="card intro" style="padding: 28px;">
-        <p>As an author and political strategist, he brings a unique perspective to understanding the complex socio-political landscape of India, with a specific focus on Punjab.</p>
-        <p>His work is deeply rooted in analyzing the evolving dynamics of Indian politics, particularly the role of Punjab in shaping the nation's future.</p>
-        <p>He aims to provide clarity on critical socio-political issues, especially those impacting Punjab, by bridging the gap between political strategy and public communication.</p>
-        <p>Through his books and media appearances, he consistently strives to present informed, insightful, and impactful perspectives on governance, democracy, and society.</p>
+        <p>As an author and political strategist, he brings a unique perspective to understanding the complex socio-political landscape of India, with a specific focus on Punjab. His work is deeply rooted in analyzing the evolving dynamics of Indian politics, particularly the role of Punjab in shaping the nation's future.</p>
+        <p>He aims to provide clarity on critical socio-political issues, especially those impacting Punjab, by bridging the gap between political strategy and public communication. Through his books and media appearances, he consistently strives to present informed, insightful, and impactful perspectives on governance, democracy, and society.</p>
       </div>
     </div>
   </section>
@@ -268,22 +270,26 @@
     <div class="container">
       <h2 class="section-title">PACWIN &amp; Pollmatrix</h2>
       <div class="companies-grid">
-        <article class="card company-card">
-          <div class="company-logo-box logo-pacwin">
-            <img src="./assets/pacwin_logo.png" alt="pacwin logo" />
-          </div>
-          <h3>PACWIN</h3>
-          <p class="company-year">Founded in 2026</p>
-          <p>We are not just consultants, we are architects of political success. With years of experience and a deep understanding of the intricate nuances of Indian politics, we transform aspirations into achievements. Our dedicated team of experts, under the leadership of Mr. Vinayak Dutt, works tirelessly to devise innovative, data-driven strategies that resonate with the masses and captivate the electorate.</p>
-        </article>
-        <article class="card company-card">
-          <div class="company-logo-box logo-pollmatrix">
-            <img src="./assets/pollmatrix_logo.png" alt="pollmatrix logo" />
-          </div>
-          <h3>Pollmatrix</h3>
-          <p class="company-year">Established in 2017</p>
-          <p>Poll Matrix Consulting Private Limited is one of the leading political consulting firms in India, specialized in providing political research and consulting, campaign management, and other election-related services.</p>
-        </article>
+        <a href="https://pacwinindia.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <article class="card company-card">
+            <div class="company-logo-box logo-pacwin">
+              <img src="./assets/pacwin_logo.png" alt="pacwin logo" />
+            </div>
+            <h3>PACWIN</h3>
+            <p class="company-year">Founded in 2026</p>
+            <p>We are not just consultants, we are architects of political success. With years of experience and a deep understanding of the intricate nuances of Indian politics, we transform aspirations into achievements. Our dedicated team of experts, under the leadership of Mr. Vinayak Dutt, works tirelessly to devise innovative, data-driven strategies that resonate with the masses and captivate the electorate.</p>
+          </article>
+        </a>
+        <a href="https://pollmatrix.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <article class="card company-card">
+            <div class="company-logo-box logo-pollmatrix">
+              <img src="./assets/pollmatrix_logo.png" alt="pollmatrix logo" />
+            </div>
+            <h3>Pollmatrix</h3>
+            <p class="company-year">Established in 2017</p>
+            <p>Poll Matrix Consulting Private Limited is one of the leading political consulting firms in India, specialized in providing political research and consulting, campaign management, and other election-related services.</p>
+          </article>
+        </a>
       </div>
     </div>
   </section>
@@ -292,27 +298,31 @@
     <div class="container">
       <h2 class="section-title">Published Works</h2>
       <div class="works-grid">
-        <article class="card work-card">
-          <div class="work-cover">
-            <img src="./assets/punjabatcrossroads.png" alt="punjabatcrossroads cover" />
-          </div>
-          <div class="work-body">
-            <h3>Punjab at Crossroads</h3>
-            <p class="work-year">2025</p>
-            <p>A comprehensive analysis of Punjab's current political and social landscape</p>
-          </div>
-        </article>
-        <article class="card work-card">
-          <div class="work-cover">
-            <img src="./assets/punjab_perspective.png" alt="punjab from the perspective of a punjabi hindu cover" />
-          </div>
-          <div class="work-body">
-            <h3>Punjab: From the Perspective of a Punjabi Hindu</h3>
-            <p class="work-year">2023</p>
-            <span class="badge">Amazon Best Seller</span>
-            <p>An insightful perspective on Punjab's cultural and social dynamics</p>
-          </div>
-        </article>
+        <a href="https://www.amazon.in/Punjab-at-Crossroad-Granary-Factory/dp/8199269847" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <article class="card work-card">
+            <div class="work-cover">
+              <img src="./assets/punjabatcrossroads.png" alt="punjabatcrossroads cover" />
+            </div>
+            <div class="work-body">
+              <h3>Punjab at Crossroads</h3>
+              <p class="work-year">2025</p>
+              <p>A comprehensive analysis of Punjab's current political and social landscape</p>
+            </div>
+          </article>
+        </a>
+        <a href="https://www.amazon.in/Punjab-Perspective-Punjabi-Vinayak-Dutt/dp/1636409067?s=bazaar" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <article class="card work-card">
+            <div class="work-cover">
+              <img src="./assets/punjab_perspective.png" alt="punjab from the perspective of a punjabi hindu cover" />
+            </div>
+            <div class="work-body">
+              <h3>Punjab: From the Perspective of a Punjabi Hindu</h3>
+              <p class="work-year">2023</p>
+              <span class="badge">Amazon Best Seller</span>
+              <p>An insightful perspective on Punjab's cultural and social dynamics</p>
+            </div>
+          </article>
+        </a>
       </div>
     </div>
   </section>
@@ -324,7 +334,7 @@
         <article class="card event-card">
           <h3>TEDx PIET, Speaker</h3>
           <p class="date">December 2025</p>
-          <p>Delivered an inspiring talk at TEDx PIET, sharing insights on political strategy and social dynamics in contemporary Punjab.</p>
+          <p>Delivered an inspiring talk at TEDx PIET, sharing mantras of success, political strategy and social dynamics in contemporary Punjab.</p>
         </article>
         <article class="card event-card">
           <h3>News18 India</h3>
