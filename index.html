@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,8 +21,16 @@
       --hover-shadow: 0 22px 45px rgba(0, 0, 0, 0.4);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background: radial-gradient(circle at 20% 0%, #17355a 0%, var(--navy) 35%, #0a1423 100%);
@@ -29,177 +38,547 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; transition: color .25s ease, opacity .25s ease; }
-    .section { padding: 70px 28px; }
-    .container { width: min(1160px, 100%); margin: 0 auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color .25s ease, opacity .25s ease;
+    }
+
+    .section {
+      padding: 70px 28px;
+    }
+
+    .container {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+    }
 
     .nav {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(7, 17, 31, .92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 17, 31, .92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
+
     .nav-inner {
-      width: min(1160px, 100%); margin: 0 auto; padding: 14px 28px;
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      width: min(1160px, 100%);
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
-    .brand { color: var(--gold); font-weight: 700; letter-spacing: .4px; }
-    .nav-links { display: flex; gap: 20px; color: var(--text-body); font-size: .92rem; }
-    .nav-links a:hover { color: var(--gold-soft); }
+
+    .brand {
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: var(--text-body);
+      font-size: .92rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-soft);
+    }
 
     .hero {
       padding: 84px 28px 54px;
-      background: linear-gradient(145deg, rgba(26,58,92,.75) 0%, rgba(17,34,64,.7) 55%, rgba(13,27,46,.98) 100%);
+      background: linear-gradient(145deg, rgba(26, 58, 92, .75) 0%, rgba(17, 34, 64, .7) 55%, rgba(13, 27, 46, .98) 100%);
     }
+
     .hero-inner {
-      width: min(1160px, 100%); margin: 0 auto;
-      display: grid; grid-template-columns: 220px 1fr; gap: 30px; align-items: center;
+      width: min(1160px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      align-items: center;
     }
+
     .hero-avatar {
-      width: 220px; height: 220px; object-fit: cover; object-position: center 40%;
-      border-radius: 50%; border: 4px solid var(--gold);
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 40%;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
       box-shadow: var(--shadow);
       transform: scale(1.25);
     }
-    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 8px; }
-    .hero .subtitle { color: var(--gold-soft); margin-bottom: 10px; }
-    .hero .tagline { color: var(--text-body); }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 8px;
+    }
+
+    .hero .subtitle {
+      color: var(--gold-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero .tagline {
+      color: var(--text-body);
+    }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)) , var(--card-bg);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0)), var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 14px;
       box-shadow: var(--shadow);
       transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
     }
+
     .card:hover {
       transform: translateY(-7px);
       box-shadow: var(--hover-shadow);
-      border-color: rgba(245,166,35,.45);
+      border-color: rgba(245, 166, 35, .45);
     }
 
-    .intro p { color: var(--text-body); margin-bottom: 12px; }
+    .intro p {
+      color: var(--text-body);
+      margin-bottom: 12px;
+    }
 
     .section-title {
-      text-align: center; font-size: clamp(1.6rem, 2.7vw, 2rem);
-      margin-bottom: 34px; letter-spacing: .2px;
+      text-align: center;
+      font-size: clamp(1.6rem, 2.7vw, 2rem);
+      margin-bottom: 34px;
+      letter-spacing: .2px;
     }
 
-    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .stat-card { padding: 30px 20px; text-align: center; }
-    .stat-number { font-size: clamp(2rem, 3.2vw, 2.65rem); font-weight: 800; color: var(--gold); margin-bottom: 6px; }
-    .stat-label { color: var(--text-body); font-size: .95rem; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
 
-    .companies-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; align-items: stretch; }
-    .companies-grid > a { display: flex; }
-    .company-card { padding: 24px; display: flex; flex-direction: column; }
-    .company-card p:last-of-type { flex: 1; }
+    .stat-card {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 3.2vw, 2.65rem);
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: var(--text-body);
+      font-size: .95rem;
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .companies-grid>a {
+      display: flex;
+    }
+
+    .company-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .company-card p:last-of-type {
+      flex: 1;
+    }
+
     .company-logo-box {
-      height: 170px; border-radius: 10px; background: #fff; margin-bottom: 16px;
-      display: flex; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .company-logo-box img { width: 100%; height: 100%; object-fit: contain; padding: 10px 14px; }
-    .company-logo-box.logo-pacwin img { max-width: 330px; max-height: 330px; padding: 0; }
-    .company-logo-box.logo-pollmatrix img { max-width: 330px; max-height: 330px; }
-    .company-card h3 { font-size: 2rem; margin-bottom: 2px; color: var(--gold); }
-    .company-year { color: var(--text-muted); font-size: .95rem; margin-bottom: 12px; }
-    .company-card p { color: var(--text-body); font-size: .92rem; }
-
-    .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; align-items: stretch; }
-    .works-grid > a { display: flex; }
-    .work-card { overflow: hidden; display: flex; flex-direction: column; }
-    .work-cover { height: 450px; flex-shrink: 0; }
-    .work-cover img { width: 100%; height: 100%; object-fit: cover; }    .work-card:nth-child(2) .work-cover img { object-fit: contain; object-position: center top; background: #fff; }    .work-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
-    .work-body p:last-of-type { flex: 1; }
-    .work-body h3 { margin-bottom: 3px; color: var(--gold); font-size: 1.18rem; line-height: 1.25; }
-    .work-year { color: var(--text-muted); font-size: .92rem; margin-bottom: 10px; }
-    .badge {
-      display: inline-block; font-size: .72rem; font-weight: 700;
-      background: var(--gold); color: #0d1b2e; border-radius: 999px;
-      padding: 4px 12px; margin-bottom: 12px;
-    }
-    .work-body p { color: var(--text-body); font-size: .95rem; }
-
-    .events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .events-grid-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px; max-width: 760px; }
-    .event-card { padding: 20px; }
-    .event-card h3 { margin-bottom: 4px; font-size: 1rem; }
-    .event-card .date { color: var(--gold-soft); font-size: .84rem; margin-bottom: 10px; }
-    .event-card p { color: var(--text-body); font-size: .9rem; }
-
-    .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .media-card { overflow: hidden; position: relative; }
-    .media-link { display: block; }
-    .media-thumb {
-      position: relative; height: 190px; background: #000;
-      display: flex; align-items: center; justify-content: center;
+      height: 170px;
+      border-radius: 10px;
+      background: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
-    .media-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: .82; transition: transform .35s ease, opacity .35s ease; }
-    .media-card:hover .media-thumb img { transform: scale(1.05); opacity: .94; }
+
+    .company-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px 14px;
+    }
+
+    .company-logo-box.logo-pacwin img {
+      max-width: 330px;
+      max-height: 330px;
+      padding: 0;
+    }
+
+    .company-logo-box.logo-pollmatrix img {
+      max-width: 330px;
+      max-height: 330px;
+    }
+
+    .company-card h3 {
+      font-size: 2rem;
+      margin-bottom: 2px;
+      color: var(--gold);
+    }
+
+    .company-year {
+      color: var(--text-muted);
+      font-size: .95rem;
+      margin-bottom: 12px;
+    }
+
+    .company-card p {
+      color: var(--text-body);
+      font-size: .92rem;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .works-grid>a {
+      display: flex;
+    }
+
+    .work-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-cover {
+      height: 450px;
+      flex-shrink: 0;
+    }
+
+    .work-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-card:nth-child(2) .work-cover img {
+      object-fit: contain;
+      object-position: center top;
+      background: #fff;
+    }
+
+    .work-body {
+      padding: 18px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-body p:last-of-type {
+      flex: 1;
+    }
+
+    .work-body h3 {
+      margin-bottom: 3px;
+      color: var(--gold);
+      font-size: 1.18rem;
+      line-height: 1.25;
+    }
+
+    .work-year {
+      color: var(--text-muted);
+      font-size: .92rem;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      background: var(--gold);
+      color: #0d1b2e;
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 12px;
+    }
+
+    .work-body p {
+      color: var(--text-body);
+      font-size: .95rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .events-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+      max-width: 760px;
+    }
+
+    .event-card {
+      padding: 20px;
+    }
+
+    .event-card h3 {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .event-card .date {
+      color: var(--gold-soft);
+      font-size: .84rem;
+      margin-bottom: 10px;
+    }
+
+    .event-card p {
+      color: var(--text-body);
+      font-size: .9rem;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .media-card {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .media-link {
+      display: block;
+    }
+
+    .media-thumb {
+      position: relative;
+      height: 190px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .media-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .82;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .media-card:hover .media-thumb img {
+      transform: scale(1.05);
+      opacity: .94;
+    }
+
     .media-badge {
-      position: absolute; top: 10px; left: 10px; z-index: 2;
-      background: rgba(0,0,0,.7); border: 1px solid rgba(255,255,255,.22);
-      border-radius: 999px; padding: 5px 10px; font-size: .72rem; color: #fff;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      background: rgba(0, 0, 0, .7);
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: .72rem;
+      color: #fff;
     }
+
     .media-play {
-      width: 58px; height: 58px; border-radius: 50%;
-      background: rgba(255,0,0,.9); box-shadow: 0 8px 18px rgba(0,0,0,.35);
-      position: absolute; z-index: 2;
-      display: grid; place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 0, 0, .9);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, .35);
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      place-items: center;
     }
+
     .media-play::after {
-      content: ""; width: 0; height: 0;
-      border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent;
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 17px solid #fff;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
       margin-left: 4px;
     }
-    .media-body { padding: 16px 16px 18px; }
-    .media-body h3 { font-size: .98rem; margin-bottom: 7px; }
-    .media-body p { color: var(--text-body); font-size: .87rem; }
-    .yt-btn {
-      display: inline-block; margin-top: 10px; color: var(--gold-soft); font-size: .84rem; font-weight: 600;
-      border-bottom: 1px dashed rgba(255,202,112,.5);
+
+    .media-body {
+      padding: 16px 16px 18px;
     }
-    .yt-btn:hover { color: #ffd99b; border-bottom-color: #ffd99b; }
 
-    .contact { text-align: center; }
-    .contact .sub { color: var(--text-body); margin-bottom: 28px; }
-    .contact-card { padding: 30px; width: min(640px, 100%); margin: 0 auto 24px; }
-    .label { font-weight: 700; margin-bottom: 6px; }
-    .email { color: var(--gold); margin-bottom: 18px; display: inline-block; }
-    .email:hover { color: #ffd99b; }
-    .location { color: var(--text-body); }
+    .media-body h3 {
+      font-size: .98rem;
+      margin-bottom: 7px;
+    }
 
-    .socials { display: flex; justify-content: center; gap: 12px; margin-top: 18px; }
+    .media-body p {
+      color: var(--text-body);
+      font-size: .87rem;
+    }
+
+    .yt-btn {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--gold-soft);
+      font-size: .84rem;
+      font-weight: 600;
+      border-bottom: 1px dashed rgba(255, 202, 112, .5);
+    }
+
+    .yt-btn:hover {
+      color: #ffd99b;
+      border-bottom-color: #ffd99b;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact .sub {
+      color: var(--text-body);
+      margin-bottom: 28px;
+    }
+
+    .contact-card {
+      padding: 30px;
+      width: min(640px, 100%);
+      margin: 0 auto 24px;
+    }
+
+    .label {
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .email {
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    .email:hover {
+      color: #ffd99b;
+    }
+
+    .location {
+      color: var(--text-body);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
     .social-link {
-      width: 45px; height: 45px; border-radius: 50%; display: grid; place-items: center;
-      border: 1px solid var(--card-border); background: var(--card-bg);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
       transition: transform .25s ease, background .25s ease, border-color .25s ease;
     }
-    .social-link:hover { transform: translateY(-4px); background: var(--navy-light); border-color: rgba(245,166,35,.45); }
+
+    .social-link:hover {
+      transform: translateY(-4px);
+      background: var(--navy-light);
+      border-color: rgba(245, 166, 35, .45);
+    }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding: 16px 20px; text-align: center; color: var(--text-muted); font-size: .88rem;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 16px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: .88rem;
       background: #091323;
     }
 
     @media (max-width: 980px) {
-      .media-grid { grid-template-columns: repeat(2, 1fr); }
-      .events-grid { grid-template-columns: repeat(2, 1fr); }
-      .events-grid-bottom { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
-      .hero-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .events-grid-bottom {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
     }
+
     @media (max-width: 720px) {
-      .nav-links { display: none; }
-      .stats-grid, .companies-grid, .works-grid, .events-grid, .media-grid, .events-grid-bottom { grid-template-columns: 1fr; }
-      .hero-avatar { width: 180px; height: 180px; }
-      .work-cover { height: 280px; }
-      .section { padding: 58px 18px; }
-      .hero { padding: 62px 18px 38px; }
-      .nav-inner { padding: 14px 18px; }
+      .nav-links {
+        display: none;
+      }
+
+      .stats-grid,
+      .companies-grid,
+      .works-grid,
+      .events-grid,
+      .media-grid,
+      .events-grid-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-avatar {
+        width: 180px;
+        height: 180px;
+      }
+
+      .work-cover {
+        height: 280px;
+      }
+
+      .section {
+        padding: 58px 18px;
+      }
+
+      .hero {
+        padding: 62px 18px 38px;
+      }
+
+      .nav-inner {
+        padding: 14px 18px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="nav">
     <div class="nav-inner">
@@ -221,7 +600,8 @@
       <img class="hero-avatar" src="./assets/coverimage.jpeg" alt="Vinayak Dutt" />
       <div>
         <h1>Vinayak Dutt</h1>
-        <p class="subtitle">Author | Political Strategist | TEDx PIET, Speaker  | "Visionary of North"-  News18  | Public Speaker | Sociologist</p>
+        <p class="subtitle">Author | Political Strategist | TEDx PIET, Speaker | "Visionary of North"- News18 | Public
+          Speaker | Sociologist</p>
         <p class="tagline">Founder. Visionary. Building impactful narratives with PACWIN and Pollmatrix.</p>
       </div>
     </div>
@@ -230,9 +610,13 @@
   <section class="section" id="about">
     <div class="container">
       <div class="card intro" style="padding: 28px;">
-        <p>With over 15 years of experience as an author and political strategist, Vinayak Dutt has dedicated his career to understanding the pulse of India's political landscape.</p>
-        <p>He has worked extensively across 18+ Indian states, including Punjab, Haryana, Himachal Pradesh, Rajasthan, Maharashtra, Goa, Karnataka, Tamil Nadu, Andhra Pradesh, Chhattisgarh, Uttar Pradesh, Bihar, Delhi, Assam, and Meghalaya—bringing deep on-ground insights into diverse political and social dynamics.</p>
-        <p>He has authored two books, with his first title becoming an Amazon Best Seller and receiving recognition from the Honorable Governor of Punjab.</p>
+        <p>With over 15 years of experience as an author and political strategist, Vinayak Dutt has dedicated his career
+          to understanding the pulse of India's political landscape.</p>
+        <p>He has worked extensively across 18+ Indian states, including Punjab, Haryana, Himachal Pradesh, Rajasthan,
+          Maharashtra, Goa, Karnataka, Tamil Nadu, Andhra Pradesh, Chhattisgarh, Uttar Pradesh, Bihar, Delhi, Assam, and
+          Meghalaya—bringing deep on-ground insights into diverse political and social dynamics.</p>
+        <p>He has authored two books, with his first title becoming an Amazon Best Seller and receiving recognition from
+          the Honorable Governor of Punjab.</p>
       </div>
     </div>
   </section>
@@ -260,8 +644,13 @@
     <div class="container">
       <h2 class="section-title">About Vinayak Dutt</h2>
       <div class="card intro" style="padding: 28px;">
-        <p>As an author and political strategist, he brings a unique perspective to understanding the complex socio-political landscape of India, with a specific focus on Punjab. His work is deeply rooted in analyzing the evolving dynamics of Indian politics, particularly the role of Punjab in shaping the nation's future.</p>
-        <p>He aims to provide clarity on critical socio-political issues, especially those impacting Punjab, by bridging the gap between political strategy and public communication. Through his books and media appearances, he consistently strives to present informed, insightful, and impactful perspectives on governance, democracy, and society.</p>
+        <p>As an author and political strategist, he brings a unique perspective to understanding the complex
+          socio-political landscape of India, with a specific focus on Punjab. His work is deeply rooted in analyzing
+          the evolving dynamics of Indian politics, particularly the role of Punjab in shaping the nation's future.</p>
+        <p>He aims to provide clarity on critical socio-political issues, especially those impacting Punjab, by bridging
+          the gap between political strategy and public communication. Through his books and media appearances, he
+          consistently strives to present informed, insightful, and impactful perspectives on governance, democracy, and
+          society.</p>
       </div>
     </div>
   </section>
@@ -270,24 +659,31 @@
     <div class="container">
       <h2 class="section-title">PACWIN &amp; Pollmatrix</h2>
       <div class="companies-grid">
-        <a href="https://pacwinindia.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+        <a href="https://pacwinindia.com/" target="_blank" rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;">
           <article class="card company-card">
             <div class="company-logo-box logo-pacwin">
               <img src="./assets/pacwin_logo.png" alt="pacwin logo" />
             </div>
             <h3>PACWIN</h3>
             <p class="company-year">Founded in 2026</p>
-            <p>We are not just consultants, we are architects of political success. With years of experience and a deep understanding of the intricate nuances of Indian politics, we transform aspirations into achievements. Our dedicated team of experts, under the leadership of Mr. Vinayak Dutt, works tirelessly to devise innovative, data-driven strategies that resonate with the masses and captivate the electorate.</p>
+            <p>We are not just consultants, we are architects of political success. With years of experience and a deep
+              understanding of the intricate nuances of Indian politics, we transform aspirations into achievements. Our
+              dedicated team of experts, under the leadership of Mr. Vinayak Dutt, works tirelessly to devise
+              innovative, data-driven strategies that resonate with the masses and captivate the electorate.</p>
           </article>
         </a>
-        <a href="https://pollmatrix.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+        <a href="https://pollmatrix.in/" target="_blank" rel="noopener noreferrer"
+          style="text-decoration: none; color: inherit;">
           <article class="card company-card">
             <div class="company-logo-box logo-pollmatrix">
               <img src="./assets/pollmatrix_logo.png" alt="pollmatrix logo" />
             </div>
             <h3>Pollmatrix</h3>
             <p class="company-year">Established in 2017</p>
-            <p>Poll Matrix Consulting Private Limited is one of the leading political consulting firms in India, specialized in providing political research and consulting, campaign management, and other election-related services.</p>
+            <p>Poll Matrix Consulting Private Limited is one of the leading political consulting firms in India,
+              specialized in providing political research and consulting, campaign management, and other
+              election-related services.</p>
           </article>
         </a>
       </div>
@@ -298,7 +694,8 @@
     <div class="container">
       <h2 class="section-title">Published Works</h2>
       <div class="works-grid">
-        <a href="https://www.amazon.in/Punjab-at-Crossroad-Granary-Factory/dp/8199269847" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+        <a href="https://www.amazon.in/Punjab-at-Crossroad-Granary-Factory/dp/8199269847" target="_blank"
+          rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
           <article class="card work-card">
             <div class="work-cover">
               <img src="./assets/punjabatcrossroads.png" alt="punjabatcrossroads cover" />
@@ -310,7 +707,8 @@
             </div>
           </article>
         </a>
-        <a href="https://www.amazon.in/Punjab-Perspective-Punjabi-Vinayak-Dutt/dp/1636409067?s=bazaar" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+        <a href="https://www.amazon.in/Punjab-Perspective-Punjabi-Vinayak-Dutt/dp/1636409067?s=bazaar" target="_blank"
+          rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
           <article class="card work-card">
             <div class="work-cover">
               <img src="./assets/punjab_perspective.png" alt="punjab from the perspective of a punjabi hindu cover" />
@@ -334,12 +732,14 @@
         <article class="card event-card">
           <h3>TEDx PIET, Speaker</h3>
           <p class="date">December 2025</p>
-          <p>Delivered an inspiring talk at TEDx PIET, sharing mantras of success, political strategy and social dynamics in contemporary Punjab.</p>
+          <p>Delivered an inspiring talk at TEDx PIET, sharing mantras of success, political strategy and social
+            dynamics in contemporary Punjab.</p>
         </article>
         <article class="card event-card">
           <h3>News18 India</h3>
           <p class="date">29 March 2026</p>
-          <p>Featured in Visionaries of North. Discussed critical political and social issues affecting Punjab and the broader national landscape.</p>
+          <p>Featured in Visionaries of North. Discussed critical political and social issues affecting Punjab and the
+            broader national landscape.</p>
         </article>
         <article class="card event-card">
           <h3>NDTV India</h3>
@@ -356,7 +756,8 @@
         <article class="card event-card">
           <h3>And More...</h3>
           <p class="date">Ongoing Contributions</p>
-          <p>Regular contributor and featured expert across various media platforms, podcasts, and public forums discussing political strategy, social issues, and Punjab's transformation.</p>
+          <p>Regular contributor and featured expert across various media platforms, podcasts, and public forums
+            discussing political strategy, social issues, and Punjab's transformation.</p>
         </article>
       </div>
     </div>
@@ -367,72 +768,125 @@
       <h2 class="section-title">Media Appearances</h2>
       <div class="media-grid">
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/yOLTW3g2xXQ?si=60GevzliLwmmrmYN" target="_blank" rel="noopener noreferrer">
+          <a class="media-link" href="https://youtu.be/yOLTW3g2xXQ?si=60GevzliLwmmrmYN" target="_blank"
+            rel="noopener noreferrer">
             <div class="media-thumb">
               <span class="media-badge">YouTube</span>
               <img src="https://img.youtube.com/vi/yOLTW3g2xXQ/hqdefault.jpg" alt="Video 1 thumbnail" />
               <div class="media-play"></div>
             </div>
-            <div class="media-body"><h3>News18 Feature</h3><p>Watch appearance on YouTube.</p><span class="yt-btn">Watch now</span></div>
-          </a>
-        </article>
-
-        <article class="card media-card">
-          <a class="media-link" href="https://www.ted.com/tedx/events/65466" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb" style="background: linear-gradient(135deg,#e62b1e,#7f0a50);">
-              <span class="media-badge">TEDx Event</span>
-              <div style="font-size:2.9rem;font-weight:800;color:#fff;z-index:2;">TEDx</div>
+            <div class="media-body">
+              <h3>News18 Feature</h3>
+              <p>Watch appearance on YouTube.</p><span class="yt-btn">Watch now</span>
             </div>
-            <div class="media-body"><h3>TEDx PIET Panipat</h3><p>Official TEDx event profile page.</p><span class="yt-btn">Open event page</span></div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/P4TyHUtg7NA?si=q9lQ3UfNnia9lktX" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/P4TyHUtg7NA/hqdefault.jpg" alt="Video 3 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 3</h3><p>Strategic commentary and political insights.</p><span class="yt-btn">Watch now</span></div>
+  <a class="media-link" href="https://www.youtube.com/watch?v=v-R0O5TQG7w&t=19s" target="_blank" rel="noopener noreferrer">
+    <div class="media-thumb">
+      <span class="media-badge">TEDx Event</span>
+      <img src="./assets/tedx.png" alt="TEDx PIET thumbnail" />
+      <div class="media-play"></div>
+    </div>
+    <div class="media-body"><h3>TEDx PIET Panipat</h3><p>Official TEDx event profile page.</p><span class="yt-btn">Open event page</span></div>
+  </a>
+</article>
+        <article class="card media-card">
+          <a class="media-link" href="https://youtu.be/P4TyHUtg7NA?si=q9lQ3UfNnia9lktX" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/P4TyHUtg7NA/hqdefault.jpg" alt="Video 3 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 3</h3>
+              <p>Strategic commentary and political insights.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/jA-25Pcx_dU?si=PF_JZrl4ylLi59Dr" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/jA-25Pcx_dU/hqdefault.jpg" alt="Video 4 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 4</h3><p>Ground perspective and governance discussion.</p><span class="yt-btn">Watch now</span></div>
+          <a class="media-link" href="https://youtu.be/jA-25Pcx_dU?si=PF_JZrl4ylLi59Dr" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/jA-25Pcx_dU/hqdefault.jpg" alt="Video 4 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 4</h3>
+              <p>Ground perspective and governance discussion.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/jKZ7BoMofh8?si=zKo5LRvQWrXXd5Bw" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/jKZ7BoMofh8/hqdefault.jpg" alt="Video 5 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 5</h3><p>Public discourse on Punjab and policy.</p><span class="yt-btn">Watch now</span></div>
+          <a class="media-link" href="https://youtu.be/jKZ7BoMofh8?si=zKo5LRvQWrXXd5Bw" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/jKZ7BoMofh8/hqdefault.jpg" alt="Video 5 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 5</h3>
+              <p>Public discourse on Punjab and policy.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/zQbk6cfMs0M?si=P9R3EFstF6Bvt4qO" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/zQbk6cfMs0M/hqdefault.jpg" alt="Video 6 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 6</h3><p>Leadership and strategic communication insights.</p><span class="yt-btn">Watch now</span></div>
+          <a class="media-link" href="https://youtu.be/zQbk6cfMs0M?si=P9R3EFstF6Bvt4qO" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/zQbk6cfMs0M/hqdefault.jpg" alt="Video 6 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 6</h3>
+              <p>Leadership and strategic communication insights.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/S2DINGRtoVU?si=V621WwS11bJ5vTT5" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/S2DINGRtoVU/hqdefault.jpg" alt="Video 7 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 7</h3><p>Discussion segment on current socio-political themes.</p><span class="yt-btn">Watch now</span></div>
+          <a class="media-link" href="https://youtu.be/S2DINGRtoVU?si=V621WwS11bJ5vTT5" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/S2DINGRtoVU/hqdefault.jpg" alt="Video 7 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 7</h3>
+              <p>Discussion segment on current socio-political themes.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/cdiOJ0vq_ZQ?si=RJbvcPCj-GHdi326" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/cdiOJ0vq_ZQ/hqdefault.jpg" alt="Video 8 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 8</h3><p>In-depth perspective on political dynamics.</p><span class="yt-btn">Watch now</span></div>
+          <a class="media-link" href="https://youtu.be/cdiOJ0vq_ZQ?si=RJbvcPCj-GHdi326" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/cdiOJ0vq_ZQ/hqdefault.jpg" alt="Video 8 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 8</h3>
+              <p>In-depth perspective on political dynamics.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
 
         <article class="card media-card">
-          <a class="media-link" href="https://youtu.be/NC3h5BgtFpY?si=fD9wsVlHpfgr2f1G" target="_blank" rel="noopener noreferrer">
-            <div class="media-thumb"><span class="media-badge">YouTube</span><img src="https://img.youtube.com/vi/NC3h5BgtFpY/hqdefault.jpg" alt="Video 9 thumbnail" /><div class="media-play"></div></div>
-            <div class="media-body"><h3>Media Clip 9</h3><p>Feature conversation and audience engagement.</p><span class="yt-btn">Watch now</span></div>
+          <a class="media-link" href="https://youtu.be/NC3h5BgtFpY?si=fD9wsVlHpfgr2f1G" target="_blank"
+            rel="noopener noreferrer">
+            <div class="media-thumb"><span class="media-badge">YouTube</span><img
+                src="https://img.youtube.com/vi/NC3h5BgtFpY/hqdefault.jpg" alt="Video 9 thumbnail" />
+              <div class="media-play"></div>
+            </div>
+            <div class="media-body">
+              <h3>Media Clip 9</h3>
+              <p>Feature conversation and audience engagement.</p><span class="yt-btn">Watch now</span>
+            </div>
           </a>
         </article>
       </div>
@@ -449,42 +903,28 @@
         <p class="location">Mohali, Punjab, India</p>
       </div>
       <div class="socials">
-        <a
-          href="https://www.facebook.com/share/186c2JZLsT/?mibextid=wwXIfr"
-          class="social-link"
-          aria-label="Facebook"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Facebook"
-        >
+        <a href="https://www.facebook.com/share/186c2JZLsT/?mibextid=wwXIfr" class="social-link" aria-label="Facebook"
+          target="_blank" rel="noopener noreferrer" title="Facebook">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M13.5 21v-8.25h2.76l.42-3.21H13.5V7.5c0-.93.26-1.56 1.6-1.56h1.72V3.06c-.3-.04-1.32-.12-2.5-.12-2.47 0-4.16 1.5-4.16 4.26v2.34H7.5v3.21h2.66V21h3.34z"/>
+            <path
+              d="M13.5 21v-8.25h2.76l.42-3.21H13.5V7.5c0-.93.26-1.56 1.6-1.56h1.72V3.06c-.3-.04-1.32-.12-2.5-.12-2.47 0-4.16 1.5-4.16 4.26v2.34H7.5v3.21h2.66V21h3.34z" />
           </svg>
         </a>
-        <a
-          href="https://www.instagram.com/vinayak_dutt?igsh=MmN2a2tlbmpqeTcy"
-          class="social-link"
-          aria-label="Instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Instagram"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <a href="https://www.instagram.com/vinayak_dutt?igsh=MmN2a2tlbmpqeTcy" class="social-link"
+          aria-label="Instagram" target="_blank" rel="noopener noreferrer" title="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
             <circle cx="12" cy="12" r="4"></circle>
             <circle cx="17.5" cy="6.5" r="1"></circle>
           </svg>
         </a>
-        <a
-          href="https://x.com/vinayak_dutt1?s=11"
-          class="social-link"
-          aria-label="X (Twitter)"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="X (Twitter)"
-        >
+        <a href="https://x.com/vinayak_dutt1?s=11" class="social-link" aria-label="X (Twitter)" target="_blank"
+          rel="noopener noreferrer" title="X (Twitter)">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.5 22H3.4l7.24-8.28L1 2h6.4l4.43 5.84L18.9 2zm-1.1 18h1.73L6.46 3.9H4.6L17.8 20z"></path>
+            <path
+              d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.4L6.5 22H3.4l7.24-8.28L1 2h6.4l4.43 5.84L18.9 2zm-1.1 18h1.73L6.46 3.9H4.6L17.8 20z">
+            </path>
           </svg>
         </a>
       </div>
@@ -526,4 +966,5 @@
     })();
   </script>
 </body>
+
 </html>
