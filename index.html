@@ -390,6 +390,11 @@
       opacity: .94;
     }
 
+    .media-thumb img.media-thumb-contain {
+      object-fit: contain;
+      opacity: 1;
+    }
+
     .media-badge {
       position: absolute;
       top: 10px;
@@ -735,7 +740,7 @@
           <p>Delivered an inspiring talk at TEDx PIET, sharing mantras of success, political strategy and social
             dynamics in contemporary Punjab.</p>
         </article>
-        
+
         <article class="card event-card">
           <h3>News18 India</h3>
           <p class="date">29 March 2026</p>
@@ -749,15 +754,6 @@
         </article>
       </div>
       <div class="events-grid-bottom">
-        <article class="card event-card">
-          <h3>The Tribune</h3>
-          <p class="date">Featured Article</p>
-          <p>"Punjab at Crossroad" by Mr. Vinayak Dutt discusses Punjab's industrial growth, agrarian stress and youth
-            migration.
-            <a href="https://www.tribuneindia.com/news/business/punjab-at-crossroad-by-mr-vinayak-dutt-discusses-punjabs-industrial-growth-agrarian-stress-and-youth-migration/"
-              target="_blank" rel="noopener noreferrer">Read article</a>
-          </p>
-        </article>
         <article class="card event-card">
           <h3>Pro Punjab TV</h3>
           <p class="date">Featured Guest</p>
@@ -789,6 +785,24 @@
             <div class="media-body">
               <h3>News18 Feature</h3>
               <p>Watch appearance on YouTube.</p><span class="yt-btn">Watch now</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="card media-card">
+          <a class="media-link"
+            href="https://www.tribuneindia.com/news/business/punjab-at-crossroad-by-mr-vinayak-dutt-discusses-punjabs-industrial-growth-agrarian-stress-and-youth-migration/"
+            target="_blank" rel="noopener noreferrer">
+            <div class="media-thumb">
+              <span class="media-badge">The Tribune</span>
+              <img class="media-thumb-contain"
+                src="https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWMwZTc4NzMwLTViNTYtMTFmMS1hZmFlLTJkNzNlMTMwYzExYi5qcGc="
+                alt="The Tribune article thumbnail" />
+            </div>
+            <div class="media-body">
+              <h3>The Tribune Feature</h3>
+              <p>"Punjab at Crossroad" — Punjab's industrial growth, agrarian stress and youth migration.</p><span
+                class="yt-btn">Read article</span>
             </div>
           </a>
         </article>
